@@ -16,7 +16,7 @@ textarea {
 }
 
 @media print {
-  #introduction {
+  .hideOnPrint {
     display: none;
   }
   #KUTable-container {
