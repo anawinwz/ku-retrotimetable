@@ -2,6 +2,7 @@ textarea {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
+  resize: none;
 }
 
 #scheduler-wrapper-title, #timeline2 .major {
@@ -12,4 +13,13 @@ textarea {
 }
 #scheduler1, #scheduler2, #scheduler3, #scheduler4, #scheduler5, #scheduler6, #scheduler7 {
   height: 80px;
+}
+
+@media print {
+  #introduction {
+    display: none;
+  }
+  #KUTable-container {
+    min-width: 1366px;
+  }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
+const colorHash = new (require('color-hash'))({lightness: 0, saturation: 0.45});
 export default ({ courses }) => {
   const calcEventWidth = (start, end) => {
     if (!start || !end) return '0px';
@@ -13,7 +14,6 @@ export default ({ courses }) => {
   
     return `${minutes * 1.5}px`;
   }
-
 
   return (
   <table align="center" border="0" style={{width: '1366px'}}>
@@ -77,7 +77,7 @@ export default ({ courses }) => {
                       width: calcEventWidth(course.start, course.end),
                     }}>
                     <div className="bar"></div>
-                    <div className="content" style={{background: 'red'}}>
+                    <div className="content" style={{background: colorHash.hex(course.name)}}>
                       <div className="inner-content">
                           <span className="event-title"><b><u>{course.code}</u></b> {course.name}</span>
                           <span className="event-location">{course.location}</span>
@@ -94,5 +94,6 @@ export default ({ courses }) => {
         </td>
       </tr>
     </tbody>
-  </table>);
+  </table>
+  );
 };
