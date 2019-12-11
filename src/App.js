@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import ReactGA from 'react-ga';
 import './App.css';
 
 import KUTable from './components/KUTable';
@@ -21,6 +22,11 @@ function App() {
     setIseaData(e.target.value);
     setCourses(require('./utils/iseaParser').default(e.target.value));
   };
+
+  useEffect(() => {
+    ReactGA.initialize('UA-154189889-2');
+    ReactGA.pageview('/');
+  }, []);
 
   return (
     <div className="App">
