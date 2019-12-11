@@ -30,7 +30,7 @@ function App() {
         <p><textarea onChange={handleChange} placeholder="วางข้อมูลที่ได้มาจากการ Copy ตามภาพ" value={iseaData} onMouseOver={e => e.target.select()} /></p>
         <button onClick={() => {setIseaData(''); setCourses(defaultCourses);}} disabled={!iseaData}>เคลียร์ข้อมูล</button> <button onClick={() => window.print()}>พิมพ์ตารางเรียน</button>
       </center>
-      <div id="KUTable-container" style={{width: '100%', overflowY: 'auto'}}>
+      <div id="KUTable-container" style={{}/* {width: '100%', overflowY: 'auto'} */}>
         <KUTable courses={courses} />
       </div>
 
