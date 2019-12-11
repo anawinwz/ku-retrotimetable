@@ -1,6 +1,20 @@
 import React from 'react';
+import moment from 'moment';
 
-export default props => {
+export default ({ courses }) => {
+  const calcEventWidth = (start, end) => {
+    if (!start || !end) return '0px';
+  
+    if (typeof start !== 'object') start = moment(start, 'HH:mm');
+    if (typeof end !== 'object') end = moment(end, 'HH:mm');
+  
+    const duration = moment.duration(end.diff(start));
+    const minutes = duration.asMinutes();
+  
+    return `${minutes * 1.5}px`;
+  }
+
+
   return (
   <table align="center" border="0" style={{width: '1366px'}}>
     <tbody>
@@ -53,24 +67,27 @@ export default props => {
                 <div className="major" style={{left: '1080px'}}>19:00 - 20:00</div>
                 <div className="major" style={{left: '1170px'}}>20:00 - 21:00</div>
               </div>
-            
-              <div id="scheduler1">
-                <div className="event" style={{height: '82px', width: '90px'}}>
-                  <div className="bar"></div>
-                  <div className="content" style={{background: 'red'}}>
-                    <div className="inner-content">
-                        <span className="event-title"><b><u>0100000</u></b> ชื่อวิชา</span>
-                        <span className="event-location">สถานที่</span>
+
+              {Object.keys(courses).map(day => {
+                return <div id={`scheduler${day}`} key={day}>
+                  {courses[day].map(course => {
+                    return <div className="event" style={{
+                      left: calcEventWidth('07:00', course.start),
+                      height: '82px',
+                      width: calcEventWidth(course.start, course.end),
+                    }}>
+                    <div className="bar"></div>
+                    <div className="content" style={{background: 'red'}}>
+                      <div className="inner-content">
+                          <span className="event-title"><b><u>{course.code}</u></b> {course.name}</span>
+                          <span className="event-location">{course.location}</span>
+                          <span className="event-location">เวลา: {course.start}-{course.end}</span>
+                      </div>
                     </div>
                   </div>
+                  })}
                 </div>
-              </div>
-              <div id="scheduler2"></div>
-              <div id="scheduler3"></div>
-              <div id="scheduler4"></div>
-              <div id="scheduler5"></div>
-              <div id="scheduler6"></div>
-              <div id="scheduler7"></div>
+              })}
             </div>
 
           </div>

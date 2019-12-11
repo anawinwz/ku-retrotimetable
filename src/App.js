@@ -17,11 +17,12 @@ function App() {
 
   const handleChange = e => {
     setIseaData(e.target.value);
+    setCourses(require('./utils/iseaParser').default(e.target.value));
   };
 
   return (
     <div className="App">
-      <textarea onChange={handleChange} placeholder="วางข้อมูลจากตาราง">{iseaData}</textarea>
+      <textarea onChange={handleChange} placeholder="วางข้อมูลจากตาราง" value={iseaData} />
       <KUTable courses={courses} />
     </div>
   );
