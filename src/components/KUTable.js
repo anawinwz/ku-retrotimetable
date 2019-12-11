@@ -1,6 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 
+import '../assets/style.css';
+import '../assets/style_title.css';
+
 
 export default ({ courses }) => {
   const colors = ['#E4382B','#89C443','#CD326F','#F3983D','#3C9889','#4DBBD4','#EFC641','#9C339A','#3A51B6'];

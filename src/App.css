@@ -5,12 +5,6 @@ textarea {
   resize: none;
 }
 
-#scheduler-wrapper-title, #timeline2 .major {
-  font-family: 'Kanit';
-}
-#timeline2 .major {
-  font-size: 12px;
-}
 #scheduler1, #scheduler2, #scheduler3, #scheduler4, #scheduler5, #scheduler6, #scheduler7 {
   height: 80px;
 }
