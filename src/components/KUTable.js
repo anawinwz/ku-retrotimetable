@@ -81,7 +81,7 @@ export default ({ courses }) => {
                     <div className="content" style={{backgroundColor: colors[course.idx]}}>
                       <div className="inner-content">
                           <span className="event-title"><b><u>{course.code}</u></b> {course.name}</span>
-                          <span className="event-location">{course.location}</span>
+                          <span className="event-location">หมู่ {course.section} ห้อง {course.location}</span>
                           <span className="event-location">เวลา: {course.start}-{course.end}</span>
                       </div>
                     </div>

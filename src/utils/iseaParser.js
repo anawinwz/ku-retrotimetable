@@ -27,14 +27,14 @@ const iseaParser = text => {
   };
   let courses = [];
 
-  const pattern = /\d\t([\d-]+)\t(.*)\t\d\t(?:บรรยาย|ปฏิบัติ)\t\d\(\d-\d-\d\)\tวิทยาเขต.*\t([\u0E00-\u0E7F]{1,2})(?:\r\n|\n)(\d{2}:\d{2})-(\d{2}:\d{2})\t([\u0E00-\u0E7Fa-zA-Z\d -]+)/g;
+  const pattern = /\d\t([\d-]+)\t(.*)\t(\d)\t(?:บรรยาย|ปฏิบัติ)\t\d\(\d-\d-\d\)\tวิทยาเขต.*\t([\u0E00-\u0E7F]{1,2})(?:\r\n|\n)(\d{2}:\d{2})-(\d{2}:\d{2})\t([\u0E00-\u0E7Fa-zA-Z\d -]+)/g;
   let match = pattern.exec(text);
   if (match === null) {
     return ret;
   }
 
   while (match !== null) {
-    const day = mapDayToIndex(match[3]);
+    const day = mapDayToIndex(match[4]);
     if (!day) {
       match = pattern.exec(text);
       continue;
@@ -50,9 +50,10 @@ const iseaParser = text => {
       course.idx = idx;
     }
     course.name = match[2];
-    course.start = match[4];
-    course.end = match[5];
-    course.location = match[6] || '';
+    course.section = match[3];
+    course.start = match[5];
+    course.end = match[6];
+    course.location = match[7] || '';
     ret[day].push(course);
 
     match = pattern.exec(text);
