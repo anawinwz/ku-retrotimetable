@@ -59,6 +59,10 @@ function App() {
   return (
     <div className="App">
       <center className="hideOnPrint">
+        <h1 style={{color: 'red'}}>
+          แอปนี้<u>จัดทำโดยนิสิต</u>เพื่อศึกษาการพัฒนาและอำนวยความสะดวกแก่นิสิต มก. ด้วยกัน<br />
+          โปรดใช้ด้วยความระมัดระวัง และตรวจสอบตารางเรียนอย่างเป็นทางการได้ที่ KU-ISEA
+        </h1>
         <img src={require('./assets/example.jpg')} alt="ภาพตัวอย่างการคัดลอกข้อมูลจาก KU-ISEA" style={{width: '50%', minWidth: '320px'}} />
         <h3>Copy ข้อมูล<i>ที่คลุมดำตามภาพ</i> จาก <a href="https://isea.ku.ac.th/" rel="noopener noreferrer" target="_blank">KU-ISEA</a> เมนู 958<br />มา Paste ลงในช่องว่าง เพื่อสร้างตารางเรียนแบบดั้งเดิม</h3>
         <p><textarea onChange={handleChange} placeholder="วางข้อมูลที่ได้มาจากการ Copy ตามภาพ" value={iseaData} onMouseOver={e => e.target.select()} /></p>
@@ -69,10 +73,6 @@ function App() {
       </div>
 
       <center className="hideOnPrint">
-        <p>
-          แอปนี้จัดทำเพื่อการศึกษาและอำนวยความสะดวกแก่นิสิตชาว มก. เท่านั้น<br />
-          <span style={{color: 'red'}}>ตารางเรียนข้างต้นถูกสร้างขึ้นบนอุปกรณ์แต่ละเครื่องจากข้อมูลที่ป้อนเข้ามา<br />โปรดตรวจสอบตารางเรียนอย่างเป็นทางการอีกครั้งที่ KU-ISEA</span>
-        </p>
         อ้างอิงจากต้นฉบับไฟล์กำหนดรูปแบบ (CSS) และโครงสร้างตาราง (HTML) ที่พัฒนาไว้โดย ฝ่ายสารสนเทศ สำนักบริการคอมพิวเตอร์ มก. เมื่อ 16 กันยายน 2553
       </center>
     </div>
