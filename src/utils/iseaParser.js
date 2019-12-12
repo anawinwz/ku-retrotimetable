@@ -27,7 +27,7 @@ const iseaParser = text => {
   };
   let courses = [];
 
-  const pattern = /(\d{8}(?:-\d{2}|))\t(.*)\t(\d+)\t(?:บรรยาย|ปฏิบัติ)\t\d\(\d-\d-\d\)\tวิทยาเขต.*\t([\u0E00-\u0E7F]{1,2}).*(?:\r\n|\n)(\d{2}:\d{2})-(\d{2}:\d{2})\t([\u0E00-\u0E7Fa-zA-Z\d -]+)/g;
+  const pattern = /(\d{8}(?:-\d{2}|))\t(.*)\t(\d+)\t(?:บรรยาย|ปฏิบัติ)\t\d\(\d-\d-\d\)\tวิทยาเขต.*\t([\u0E00-\u0E7F]{1,2}).*(?:\r\n|\n)(\d{2}:\d{2})-(\d{2}:\d{2})\t([\u0E00-\u0E7Fa-zA-Z\d -\.]+)/g;
   let match = pattern.exec(text);
   if (match === null) {
     return ret;
