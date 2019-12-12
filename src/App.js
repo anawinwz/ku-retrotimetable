@@ -60,7 +60,7 @@ function App() {
         <img src={require('./assets/example.jpg')} alt="ภาพตัวอย่างการคัดลอกข้อมูลจาก KU-ISEA" style={{width: '50%', minWidth: '320px'}} />
         <h3>Copy ข้อมูล<i>ที่คลุมดำตามภาพ</i> จาก <a href="https://isea.ku.ac.th/" rel="noopener noreferrer" target="_blank">KU-ISEA</a> เมนู 958<br />มา Paste ลงในช่องว่าง เพื่อสร้างตารางเรียนแบบดั้งเดิม</h3>
         <p><textarea onChange={handleChange} placeholder="วางข้อมูลที่ได้มาจากการ Copy ตามภาพ" value={iseaData} onMouseOver={e => e.target.select()} /></p>
-        <button onClick={handleClear} disabled={!iseaData}>เคลียร์ข้อมูล</button> <button onClick={handlePrint}>พิมพ์ตารางเรียน</button>
+        <button onClick={handleClear} disabled={!iseaData}>เคลียร์ข้อมูล</button> <button onClick={handlePrint}>Print ตารางเรียน</button>
       </center>
       <div id="KUTable-container" style={{}/* {width: '100%', overflowY: 'auto'} */}>
         <KUTable courses={courses} />
