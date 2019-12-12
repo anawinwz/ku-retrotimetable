@@ -22,14 +22,16 @@ function App() {
   const handleChange = e => {
     setIseaData(e.target.value);
 
-    const parsedValue = iseaParser.default(e.target.value);
-    const isSuccess = Object.keys(parsedValue).find(day => parsedValue[day].length > 0);
-
-    ReactGA.event({
-      category: 'Parse',
-      action: isSuccess ? 'Success' : 'Failed'
-    });
-    setCourses(parsedValue);
+    if (e.target.value) {
+      const parsedValue = iseaParser.default(e.target.value);
+      const isSuccess = Object.keys(parsedValue).find(day => parsedValue[day].length > 0);
+      
+      ReactGA.event({
+        category: 'Parse',
+        action: isSuccess ? 'Success' : 'Failed'
+      });
+      setCourses(parsedValue);
+    }
   };
 
   const handleClear = () => {  
