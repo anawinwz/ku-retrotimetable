@@ -49,7 +49,7 @@ function App() {
       action: 'Printed via button'
     });
     window.print();
-  }
+  };
 
   useEffect(() => {
     ReactGA.initialize('UA-154189889-2');
@@ -68,7 +68,8 @@ function App() {
         <p><textarea onChange={handleChange} placeholder="วางข้อมูลที่ได้มาจากการ Copy ตามภาพ" value={iseaData} onMouseOver={e => e.target.select()} /></p>
         <button onClick={handleClear} disabled={!iseaData}>เคลียร์ข้อมูล</button> <button onClick={handlePrint}>Print ตารางเรียน</button>
       </center>
-      <div id="KUTable-container" style={{}/* {width: '100%', overflowY: 'auto'} */}>
+
+      <div id="KUTable-container" style={{marginTop: '25px', marginBottom: '25px'}}>
         <KUTable courses={courses} />
       </div>
 
