@@ -91,7 +91,7 @@ function App() {
       default:
         setTheme('light');
         ReactGA.event({
-          category: 'Table',
+          category: 'Theme',
           action: 'User Toggle',
           label: 'To Light'
         });
