@@ -31,32 +31,33 @@ a, a:visited, a:hover, a:active, a:focus {
   padding: 5px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .showOnDarkMode {
+/* Dark Theme */
+
+  body[data-theme="dark"] .showOnDarkMode {
     display: block;
   }
-  .showOnDarkMode.inline {
+  body[data-theme="dark"] .showOnDarkMode.inline {
     display: inline-block;
   }
-  body {
+  body[data-theme="dark"] {
     background: #333333;
     color: whitesmoke;
   }
-  textarea {
+  body[data-theme="dark"] textarea {
     background: gray;
     color: whitesmoke;
   }
-  textarea::placeholder {
+  body[data-theme="dark"] textarea::placeholder {
     color: rgb(200, 200, 200);
   }
-  .redWarning {
+  body[data-theme="dark"] .redWarning {
     color: #df2d2d;
   }
-  .warningBox {
+  body[data-theme="dark"] .warningBox {
     color: #753b00;
     background: #c0c0a8;
   }
-}
+
 
 @media print {
 

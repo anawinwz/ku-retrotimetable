@@ -384,26 +384,32 @@
     background-color: #ccccff;
 }
 
-@media (prefers-color-scheme: dark) {
-    #scheduler-wrapper {
+/* Dark Theme */
+
+    body[data-theme="dark"] #scheduler-wrapper {
         background-color: #333333;
         border-left-color: #6b6b6b;
         border-right-color: #6b6b6b;
     }
-    .tt-time {
+    body[data-theme="dark"] .tt-time {
         border-right-color: #6b6b6b;
     }
-    #scheduler1, #scheduler2, #scheduler3, #scheduler4, #scheduler5, #scheduler6, #scheduler7 {
+    body[data-theme="dark"] #scheduler1,
+    body[data-theme="dark"] #scheduler2,
+    body[data-theme="dark"] #scheduler3,
+    body[data-theme="dark"] #scheduler4,
+    body[data-theme="dark"] #scheduler5,
+    body[data-theme="dark"] #scheduler6,
+    body[data-theme="dark"] #scheduler7 {
         border-top-color: #6b6b6b;
         border-bottom-color: #6b6b6b;
     }
-    .event .content {
+    body[data-theme="dark"] .event .content {
         border-color: #6b6b6b !important;
     }
-    .outerTd {
+    body[data-theme="dark"] .outerTd {
         background-color: #6b6b6b;
     }
-}
 
 @media print {
     #scheduler-wrapper {

@@ -165,17 +165,23 @@
 	position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
-	#scheduler-wrapper-title {
+/* Dark Theme */
+
+	body[data-theme="dark"] #scheduler-wrapper-title {
 		background-color: #3f3f3f;
 	}
-	#scheduler-title,#scheduler-title2,#scheduler-title3,#scheduler-title4,#scheduler-title5,#scheduler-title6,#scheduler-title7{
+	body[data-theme="dark"] #scheduler-title,
+	body[data-theme="dark"] #scheduler-title2,
+	body[data-theme="dark"] #scheduler-title3,
+	body[data-theme="dark"] #scheduler-title4,
+	body[data-theme="dark"] #scheduler-title5,
+	body[data-theme="dark"] #scheduler-title6,
+	body[data-theme="dark"] #scheduler-title7{
 		border-top-color: #6b6b6b;
 		border-bottom-color: #6b6b6b;
 		background-color: #4c4c4c;
 		color: lightgray;
 	}
-}
 
 @media print {
 	#scheduler-wrapper-title {

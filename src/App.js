@@ -5,6 +5,7 @@ import './App.css';
 import KUTable from './components/KUTable';
 
 const iseaParser = require('./utils/iseaParser');
+
 const defaultCourses = {
   1: [],
   2: [],
@@ -14,10 +15,36 @@ const defaultCourses = {
   6: [],
   7: []
 };
+const getDefaultTheme = () => {
+  let theme = localStorage.getItem('theme');
+  if (['dark', 'light'].includes(theme)) return theme;
+  else theme = 'light';
+   
+  if (!window.matchMedia) return theme;
+  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark';
+    ReactGA.event({
+      category: 'Theme',
+      action: 'System-defined',
+      label: 'To Dark',
+      nonInteraction: true
+    });
+  } else {
+    ReactGA.event({
+      category: 'Theme',
+      action: 'System-defined',
+      label: 'To Light',
+      nonInteraction: true
+    });
+  }
+
+  return theme;
+};
 
 function App() {
   const [iseaData, setIseaData] = useState('');
   const [courses, setCourses] = useState(defaultCourses);
+  const [theme, setTheme] = useState(getDefaultTheme());
 
   const handleChange = e => {
     setIseaData(e.target.value);
@@ -51,15 +78,40 @@ function App() {
     window.print();
   };
 
+  const toggleTheme = () => {
+    switch (theme) {
+      case 'light':
+        setTheme('dark');
+        ReactGA.event({
+          category: 'Theme',
+          action: 'User Toggle',
+          label: 'To Dark'
+        });
+        break;
+      default:
+        setTheme('light');
+        ReactGA.event({
+          category: 'Table',
+          action: 'User Toggle',
+          label: 'To Light'
+        });
+    }
+  }
+
   useEffect(() => {
     ReactGA.initialize('UA-154189889-2');
     ReactGA.pageview('/');
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+
   const isSamsungBrowser = navigator.userAgent.match(/SamsungBrowser/i);
 
   return (
-    <div className="App">
+    <div className={['App', theme]}>
       <center className="hideOnPrint">
         <h2 className="redWarning">
           แอปนี้<u>จัดทำโดยนิสิต</u>เพื่อศึกษาการพัฒนาและอำนวยความสะดวกแก่นิสิต มก. ด้วยกัน<br />
@@ -73,7 +125,9 @@ function App() {
           เราได้ปรับให้รองรับและประมวลผล<u>เท่าที่เป็นไปได้</u>แล้ว<br />โปรดตรวจสอบความถูกต้องอีกครั้ง หรือใช้เบราว์เซอร์อื่น
         </p>}
         <p><textarea onChange={handleChange} placeholder="วางข้อมูลที่ได้มาจากการ Copy ตามภาพ" value={iseaData} onMouseOver={e => e.target.select()} /></p>
-        <button onClick={handleClear} disabled={!iseaData}>เคลียร์ข้อมูล</button> <button onClick={handlePrint}>Print ตารางเรียน</button>
+        <button onClick={handleClear} disabled={!iseaData}>เคลียร์ข้อมูล</button> &nbsp;
+        <button onClick={handlePrint}>Print ตารางเรียน</button> &nbsp;
+        <button onClick={toggleTheme}>เปิด/ปิดไฟ</button> &nbsp;
       </center>
 
       <div id="KUTable-container" style={{marginTop: '25px', marginBottom: '25px'}}>
