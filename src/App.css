@@ -1,3 +1,9 @@
+body {
+  font-family: 'Tahoma';
+  color: #333333;
+  font-size: 12px;
+}
+
 textarea {
   width: 100%;
   max-width: 960px;
@@ -5,11 +11,59 @@ textarea {
   resize: none;
 }
 
-#scheduler1, #scheduler2, #scheduler3, #scheduler4, #scheduler5, #scheduler6, #scheduler7 {
-  height: 80px;
+a, a:visited, a:hover, a:active, a:focus {
+  color: #388cff;
+}
+
+.showOnDarkMode {
+  display: none;
+}
+
+.redWarning {
+  font-family: 'Kanit', sans-serif;
+  color: #d10000;
+}
+
+.warningBox {
+  color: brown;
+  background: lightyellow;
+  max-width: 500px; 
+  padding: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .showOnDarkMode {
+    display: block;
+  }
+  .showOnDarkMode.inline {
+    display: inline-block;
+  }
+  body {
+    background: #333333;
+    color: whitesmoke;
+  }
+  textarea {
+    background: gray;
+    color: whitesmoke;
+  }
+  textarea::placeholder {
+    color: rgb(200, 200, 200);
+  }
+  .redWarning {
+    color: #df2d2d;
+  }
+  .warningBox {
+    color: #753b00;
+    background: #c0c0a8;
+  }
 }
 
 @media print {
+
+  body {
+    background: white;
+    color: #333333;
+  }
   .hideOnPrint {
     display: none;
   }

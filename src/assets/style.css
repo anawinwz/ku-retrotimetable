@@ -1,9 +1,3 @@
-body {
-    font-family: 'Tahoma';
-    color: #333333;
-    font-size: 12px;
-}
-
 .tt-times
 {
 	position:absolute;
@@ -98,43 +92,43 @@ body {
     #scheduler1{
 		border-top: 1px solid #CCCCCC;
 		border-bottom: 1px solid #CCCCCC;
-		height: 80;
+		height: 80px;
 		width: 100%;
         position: relative;
     }
     #scheduler2{
 		border-bottom: 1px solid #CCCCCC;
-		height: 80;
+		height: 80px;
 		width: 100%;
         position: relative;
     }
     #scheduler3{
 		border-bottom: 1px solid #CCCCCC;
-		height: 80;
+		height: 80px;
 		width: 100%;
         position: relative;
     }
     #scheduler4{
 		border-bottom: 1px solid #CCCCCC;
-		height: 80;
+		height: 80px;
 		width: 100%;
         position: relative;
     }
     #scheduler5{
 		border-bottom: 1px solid #CCCCCC;
-		height: 80;
+		height: 80px;
 		width: 100%;
         position: relative;
     }
     #scheduler6{
 		border-bottom: 1px solid #CCCCCC;
-		height: 80;
+		height: 80px;
 		width: 100%;
         position: relative;
     }
     #scheduler7{
 		border-bottom: 1px solid #CCCCCC;
-		height: 80;
+		height: 80px;
 		width: 100%;
         position: relative;
     }
@@ -386,3 +380,48 @@ body {
 	display: block;
 }
 
+.outerTd {
+    background-color: #ccccff;
+}
+
+@media (prefers-color-scheme: dark) {
+    #scheduler-wrapper {
+        background-color: #333333;
+        border-left-color: #6b6b6b;
+        border-right-color: #6b6b6b;
+    }
+    .tt-time {
+        border-right-color: #6b6b6b;
+    }
+    #scheduler1, #scheduler2, #scheduler3, #scheduler4, #scheduler5, #scheduler6, #scheduler7 {
+        border-top-color: #6b6b6b;
+        border-bottom-color: #6b6b6b;
+    }
+    .event .content {
+        border-color: #6b6b6b !important;
+    }
+    .outerTd {
+        background-color: #6b6b6b;
+    }
+}
+
+@media print {
+    #scheduler-wrapper {
+        background-color: white;
+        border-left-color: #CCCCCC;
+        border-right-color: #CCCCCC;
+    }
+    .tt-time {
+        border-right-color: #CCCCCC;
+    }
+    #scheduler1, #scheduler2, #scheduler3, #scheduler4, #scheduler5, #scheduler6, #scheduler7 {
+        border-top-color: #CCCCCC;
+        border-bottom-color: #CCCCCC;
+    }
+    .event .content {
+        border-color: #CCCCCC !important;
+    }
+    .outerTd {
+        background-color: #ccccff;
+    }
+}

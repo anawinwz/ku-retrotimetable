@@ -23,7 +23,7 @@ export default ({ courses }) => {
   <table align="center" border="0" style={{width: '1366px'}}>
     <tbody>
       <tr>
-        <td bgcolor="#ccccff">
+        <td className="outerTd">
           <div id="wrapper-title">
             <div id="scheduler-wrapper-title">
               <div id="timeline-title"></div>

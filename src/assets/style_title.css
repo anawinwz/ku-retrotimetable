@@ -165,3 +165,26 @@
 	position: relative;
 }
 
+@media (prefers-color-scheme: dark) {
+	#scheduler-wrapper-title {
+		background-color: #3f3f3f;
+	}
+	#scheduler-title,#scheduler-title2,#scheduler-title3,#scheduler-title4,#scheduler-title5,#scheduler-title6,#scheduler-title7{
+		border-top-color: #6b6b6b;
+		border-bottom-color: #6b6b6b;
+		background-color: #4c4c4c;
+		color: lightgray;
+	}
+}
+
+@media print {
+	#scheduler-wrapper-title {
+		background-color: #e4e4e4;
+	}
+	#scheduler-title,#scheduler-title2,#scheduler-title3,#scheduler-title4,#scheduler-title5,#scheduler-title6,#scheduler-title7{
+		border-top-color: #CCCCCC;
+		border-bottom-color: #CCCCCC;
+		background-color: #e4e4e4;
+		color: #686868;
+	}
+}
