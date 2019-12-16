@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
-import '../assets/style.css';
-import '../assets/style_title.css';
+import './style.css';
+import './style_title.css';
 
 
 export default ({ courses }) => {
