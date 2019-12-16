@@ -18,6 +18,7 @@ export default ({ courses }) => {
   
     return `${minutes * 1.5}px`;
   }
+  const zeroFill = num => num < 10 ? `0${num}` : `${num}`; 
 
   return (
   <table align="center" border="0" style={{width: '1366px'}}>
@@ -39,46 +40,22 @@ export default ({ courses }) => {
         
           <div id="wrapper" style={{width: '1260px'}}>
             <div className="tt-times">
-              <div className="tt-time" style={{left: '45px'}}></div>
-              <div className="tt-time" style={{left: '135px'}}></div>
-              <div className="tt-time" style={{left: '225px'}}></div>
-              <div className="tt-time" style={{left: '315px'}}></div>
-              <div className="tt-time" style={{left: '405px'}}></div>
-              <div className="tt-time" style={{left: '495px'}}></div>
-              <div className="tt-time" style={{left: '585px'}}></div>
-              <div className="tt-time" style={{left: '675px'}}></div>
-              <div className="tt-time" style={{left: '765px'}}></div>
-              <div className="tt-time" style={{left: '855px'}}></div>
-              <div className="tt-time" style={{left: '945px'}}></div>
-              <div className="tt-time" style={{left: '1035px'}}></div>
-              <div className="tt-time" style={{left: '1125px'}}></div>
+              {[...Array(13)].map((_, i) => <div className="tt-time" style={{left: `${45 + (i*90)}px`}} />)}
             </div>
         
             <div id="scheduler-wrapper">
               <div id="timeline2">
-                <div className="major" style={{left: '0px'}}>07:00 - 08:00</div>
-                <div className="major" style={{left: '90px'}}>08:00 - 09:00</div>
-                <div className="major" style={{left: '180px'}}>09:00 - 10:00</div>
-                <div className="major" style={{left: '270px'}}>10:00 - 11:00</div>
-                <div className="major" style={{left: '360px'}}>11:00 - 12:00</div>
-                <div className="major" style={{left: '450px'}}>12:00 - 13:00</div>
-                <div className="major" style={{left: '540px'}}>13:00 - 14:00</div>
-                <div className="major" style={{left: '630px'}}>14:00 - 15:00</div>
-                <div className="major" style={{left: '720px'}}>15:00 - 16:00</div>
-                <div className="major" style={{left: '810px'}}>16:00 - 17:00</div>
-                <div className="major" style={{left: '900px'}}>17:00 - 18:00</div>
-                <div className="major" style={{left: '990px'}}>18:00 - 19:00</div>
-                <div className="major" style={{left: '1080px'}}>19:00 - 20:00</div>
-                <div className="major" style={{left: '1170px'}}>20:00 - 21:00</div>
+                {[...Array(14)].map((_, i) => 
+                <div className="major" style={{left: `${i*90}px`}}>{zeroFill(i+7)}:00-{zeroFill(i+8)}:00</div>)}
               </div>
 
               {Object.keys(courses).map(day => {
                 return <div id={`scheduler${day}`} key={day}>
                   {courses[day].map(course => {
                     return <div className="event" style={{
-                      left: calcEventWidth('07:00', course.start),
-                      height: '82px',
                       width: calcEventWidth(course.start, course.end),
+                      height: '82px',
+                      left: calcEventWidth('07:00', course.start)
                     }}>
                     <div className="bar"></div>
                     <div className="content" style={{backgroundColor: colors[course.idx]}}>
