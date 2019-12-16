@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
-import './style.css';
-import './style_title.css';
+import './style.scss';
+import './style_title.scss';
 
 
 export default ({ courses }) => {
@@ -21,36 +21,36 @@ export default ({ courses }) => {
   const zeroFill = num => num < 10 ? `0${num}` : `${num}`; 
 
   return (
-  <table align="center" border="0" style={{width: '1366px'}}>
+  <table className="kuTable" style={{width: '1366px'}}>
     <tbody>
       <tr>
         <td className="outerTd">
-          <div id="wrapper-title">
-            <div id="scheduler-wrapper-title">
-              <div id="timeline-title"></div>
-              <div id="scheduler-title"><div className="bar"></div>อาทิตย์</div>
-              <div id="scheduler-title2"><div className="bar"></div>จันทร์</div>
-              <div id="scheduler-title3"><div className="bar"></div>อังคาร</div>
-              <div id="scheduler-title4"><div className="bar"></div>พุธ</div>
-              <div id="scheduler-title5"><div className="bar"></div>พฤหัส</div>
-              <div id="scheduler-title6"><div className="bar"></div>ศุกร์</div>
-              <div id="scheduler-title7"><div className="bar"></div>เสาร์</div>
+          <div className="wrapper-title">
+            <div className="scheduler-wrapper-title">
+              <div className="timeline-title"></div>
+              <div className="scheduler-title day1"><div className="bar"></div>อาทิตย์</div>
+              <div className="scheduler-title day2"><div className="bar"></div>จันทร์</div>
+              <div className="scheduler-title day3"><div className="bar"></div>อังคาร</div>
+              <div className="scheduler-title day4"><div className="bar"></div>พุธ</div>
+              <div className="scheduler-title day5"><div className="bar"></div>พฤหัส</div>
+              <div className="scheduler-title day6"><div className="bar"></div>ศุกร์</div>
+              <div className="scheduler-title day7"><div className="bar"></div>เสาร์</div>
             </div>
           </div> 
         
-          <div id="wrapper" style={{width: '1260px'}}>
+          <div className="wrapper" style={{width: '1260px'}}>
             <div className="tt-times">
               {[...Array(13)].map((_, i) => <div className="tt-time" style={{left: `${45 + (i*90)}px`}} />)}
             </div>
         
-            <div id="scheduler-wrapper">
-              <div id="timeline2">
+            <div className="scheduler-wrapper">
+              <div className="timeline2">
                 {[...Array(14)].map((_, i) => 
                 <div className="major" style={{left: `${i*90}px`}}>{zeroFill(i+7)}:00-{zeroFill(i+8)}:00</div>)}
               </div>
 
               {Object.keys(courses).map(day => {
-                return <div id={`scheduler${day}`} key={day}>
+                return <div className="scheduler" key={day}>
                   {courses[day].map(course => {
                     return <div className="event" style={{
                       width: calcEventWidth(course.start, course.end),
