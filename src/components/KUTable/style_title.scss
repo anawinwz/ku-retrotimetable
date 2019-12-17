@@ -1,127 +1,127 @@
 .kuTable {
-	.table-title {
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-	
-		font-family: 'Kanit';
-		font-size: 40px;
-		font-weight: bold;
-		color: #686868; 
-		text-align: center;
-		background-color: #ddd;
-		border: 1px solid #CCCCCC;
-		line-height: 40px;
-		height: 35px;
+  .table-title {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  
+    font-family: 'Kanit';
+    font-size: 40px;
+    font-weight: bold;
+    color: #686868; 
+    text-align: center;
+    background-color: #ddd;
+    border: 1px solid #CCCCCC;
+    line-height: 40px;
+    height: 35px;
 
-		.bar {
-			-moz-box-sizing: border-box;
-			-webkit-box-sizig: border-box;
-			box-sizing: border-box;
-			background-color: #4B6EA8;
-			float: left;
-			height: 100%;
-			width: 4px;	
-		}
-	}
-	
-	.wrapper-title {
-		background-color: rgb(125, 125, 125);
-		padding: 0px;
-	
-		height: 607px;
-		width: 100px;
-		position: relative;
-	}
-	
-	.scheduler-wrapper-title {
-		font-family: 'Kanit';
-		line-height: 90px;
-		color: #333;
-		font-weight: bold;
-		font-size: 20px;
-		text-align: center;
-		background-color: #e4e4e4; 
-		display: relative;
-		top: 60px;
-		height: 100%;
-	}
-	
-	.timeline-title {
-		width: 100px;
-		height: 40px;
-		position: relative;
-	}
-	
-	.scheduler-title {
-		border-top: 1px solid #CCCCCC;
-		width: 100px;
-		height: 80px;
-		position: relative;
+    .bar {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizig: border-box;
+      box-sizing: border-box;
+      background-color: #4B6EA8;
+      float: left;
+      height: 100%;
+      width: 4px;	
+    }
+  }
+  
+  .wrapper-title {
+    background-color: rgb(125, 125, 125);
+    padding: 0px;
+  
+    height: 607px;
+    width: 100px;
+    position: relative;
+  }
+  
+  .scheduler-wrapper-title {
+    font-family: 'Kanit';
+    line-height: 90px;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    background-color: #e4e4e4; 
+    display: relative;
+    top: 60px;
+    height: 100%;
+  }
+  
+  .timeline-title {
+    width: 100px;
+    height: 40px;
+    position: relative;
+  }
+  
+  .scheduler-title {
+    border-top: 1px solid #CCCCCC;
+    width: 100px;
+    height: 80px;
+    position: relative;
 
-		.bar {
-			-moz-box-sizing: border-box;
-			-webkit-box-sizig: border-box;
-			box-sizing: border-box;
-			float: left;
-			width: 4px;
-			height: 100%;
-		}
+    .bar {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizig: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 4px;
+      height: 100%;
+    }
 
-		&.day1 .bar {
-			background-color: #ff0000;
-		}
-		&.day2 .bar {
-			background-color: #ffff00;
-		}
-		&.day3 .bar {
-			background-color: #ff99ff;
-		}
-		&.day4 .bar {
-			background-color: #66cc66;
-		}
-		&.day5 .bar {
-			background-color: #ff9900;
-		}
-		&.day6 .bar {
-			background-color: #6699ff;
-		}
-		&.day7 .bar {
-			background-color: #cc99cc;
-		}
-	}
-	.timeline-title2 {
-		top: -280px;
-		left: 1050px;
-		width: 60px;
-		height: 100%;
-		position: relative;
-	}
+    &.day1 .bar {
+      background-color: #ff0000;
+    }
+    &.day2 .bar {
+      background-color: #ffff00;
+    }
+    &.day3 .bar {
+      background-color: #ff99ff;
+    }
+    &.day4 .bar {
+      background-color: #66cc66;
+    }
+    &.day5 .bar {
+      background-color: #ff9900;
+    }
+    &.day6 .bar {
+      background-color: #6699ff;
+    }
+    &.day7 .bar {
+      background-color: #cc99cc;
+    }
+  }
+  .timeline-title2 {
+    top: -280px;
+    left: 1050px;
+    width: 60px;
+    height: 100%;
+    position: relative;
+  }
 }
 
 
 /* Dark Theme */
 
 body[data-theme="dark"] {
-	.scheduler-wrapper-title {
-		background-color: #3f3f3f;
-	}
-	.scheduler-title {
-		border-top-color: #6b6b6b;
-		border-bottom-color: #6b6b6b;
-		background-color: #4c4c4c;
-		color: lightgray;
-	}
+  .scheduler-wrapper-title {
+    background-color: #3f3f3f;
+  }
+  .scheduler-title {
+    border-top-color: #6b6b6b;
+    border-bottom-color: #6b6b6b;
+    background-color: #4c4c4c;
+    color: lightgray;
+  }
 }
 
 @media print {
-	.scheduler-wrapper-title {
-		background-color: #e4e4e4;
-	}
-	.scheduler-title {
-		border-top-color: #CCCCCC;
-		border-bottom-color: #CCCCCC;
-		background-color: #e4e4e4;
-		color: #686868;
-	}
+  .scheduler-wrapper-title {
+    background-color: #e4e4e4;
+  }
+  .scheduler-title {
+    border-top-color: #CCCCCC;
+    border-bottom-color: #CCCCCC;
+    background-color: #e4e4e4;
+    color: #686868;
+  }
 }
