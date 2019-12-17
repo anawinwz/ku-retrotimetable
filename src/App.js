@@ -117,7 +117,7 @@ function App() {
           แอปนี้<u>จัดทำโดยนิสิต</u>เพื่อศึกษาการพัฒนาและอำนวยความสะดวกแก่นิสิต มก. ด้วยกัน<br />
           โปรดใช้ด้วยความระมัดระวัง และตรวจสอบตารางเรียนอย่างเป็นทางการได้ที่ KU-ISEA
         </h2>
-        <img src={require('./assets/example.jpg')} alt="ภาพตัวอย่างการคัดลอกข้อมูลจาก KU-ISEA" style={{width: '50%', minWidth: '320px'}} />
+        <img src="/static/img/example.jpg" alt="ภาพตัวอย่างการคัดลอกข้อมูลจาก KU-ISEA" style={{width: '50%', minWidth: '320px'}} />
         <h3>Copy ข้อมูล<i>ที่คลุมดำตามภาพ</i> จาก <a href="https://isea.ku.ac.th/" rel="noopener noreferrer" target="_blank">KU-ISEA</a> เมนู 958<br />มา Paste ลงในช่องว่าง เพื่อสร้างตารางเรียนแบบดั้งเดิม</h3>
         {isSamsungBrowser && 
         <p className="warningBox">
