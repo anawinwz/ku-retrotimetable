@@ -13,6 +13,7 @@
 /.firebase
 .firebaserc
 firebase.json
+ogImage*
 /public/ogImage*
 
 # misc
