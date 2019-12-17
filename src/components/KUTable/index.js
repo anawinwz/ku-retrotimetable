@@ -27,14 +27,14 @@ export default ({ courses }) => {
         <td className="outerTd">
           <div className="wrapper-title">
             <div className="scheduler-wrapper-title">
-              <div className="timeline-title"></div>
-              <div className="scheduler-title day1"><div className="bar"></div>อาทิตย์</div>
-              <div className="scheduler-title day2"><div className="bar"></div>จันทร์</div>
-              <div className="scheduler-title day3"><div className="bar"></div>อังคาร</div>
-              <div className="scheduler-title day4"><div className="bar"></div>พุธ</div>
-              <div className="scheduler-title day5"><div className="bar"></div>พฤหัส</div>
-              <div className="scheduler-title day6"><div className="bar"></div>ศุกร์</div>
-              <div className="scheduler-title day7"><div className="bar"></div>เสาร์</div>
+              <div className="timeline-title" />
+              <div className="scheduler-title day1"><div className="bar" />อาทิตย์</div>
+              <div className="scheduler-title day2"><div className="bar" />จันทร์</div>
+              <div className="scheduler-title day3"><div className="bar" />อังคาร</div>
+              <div className="scheduler-title day4"><div className="bar" />พุธ</div>
+              <div className="scheduler-title day5"><div className="bar" />พฤหัส</div>
+              <div className="scheduler-title day6"><div className="bar" />ศุกร์</div>
+              <div className="scheduler-title day7"><div className="bar" />เสาร์</div>
             </div>
           </div> 
         
@@ -57,7 +57,7 @@ export default ({ courses }) => {
                       height: '82px',
                       left: calcEventWidth('07:00', course.start)
                     }}>
-                    <div className="bar"></div>
+                    <div className="bar" />
                     <div className="content" style={{backgroundColor: colors[course.idx]}}>
                       <div className="inner-content">
                           <span className="event-title"><b><u>{course.code}</u></b> {course.name}</span>
